@@ -1,0 +1,841 @@
+* {
+    font-size: 16px;
+
+    /* <uniquifier>: Use a unique and descriptive class name
+   <weight>: Use a value from 200 to 900 */
+   
+   font-family: "Noto Serif JP", serif;
+   font-optical-sizing: auto;
+   font-weight: normal;
+   font-style: normal;
+
+}
+
+
+
+/* header */
+
+header {
+  padding: 1rem 2.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: blue;
+}
+
+header nav {
+  display: none;
+  white-space: nowrap;
+}
+
+header nav ul {
+  
+}
+
+#open {
+  color: #fff;
+  cursor: pointer;
+}
+
+#close {
+  color: #000;
+  cursor: pointer;
+  z-index: 1;
+}
+
+#open.hide {
+  display: none;
+}
+
+@media (min-width:600px) {
+  /* 600px以上の時（HPサイズの時） */
+  header {
+    padding: 1rem 4rem;
+  }
+
+  header nav {
+    display: block;
+  }
+
+  header nav ul li {
+    display: inline-block;
+  }
+  
+  header nav ul li a {
+    padding: 1rem;
+    text-decoration: none;
+    color: #fff;
+  }
+
+  #open {
+    display: none;
+  }
+}
+
+/* common */
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 0.95);
+  text-align: center;
+  padding: 64px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .6s;
+  z-index: 3;
+}
+
+.overlay.show {
+  opacity: .95;
+  pointer-events: auto;
+}
+
+.overlay #close {
+  position: absolute;
+  top: 1rem;
+  right: 2rem;
+  cursor: pointer;
+}
+
+.overlay li {
+  margin-top: 5rem;
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity .3s, transform .3s;
+}
+
+.overlay a {
+  text-decoration: none;
+}
+
+.overlay.show li {
+  opacity: 1;
+  transform: none;
+}
+
+.overlay.show li:nth-child(1) {
+  transition-delay: .1s;
+}
+
+.overlay.show li:nth-child(2) {
+  transition-delay: .2s;
+}
+
+.overlay.show li:nth-child(3) {
+  transition-delay: .3s;
+}
+
+.overlay.show li:nth-child(4) {
+  transition-delay: .4s;
+}
+
+.overlay.show li:nth-child(5) {
+  transition-delay: .5s;
+}
+
+
+.index-hero {
+  width: 100vw;
+  height: 60vh;
+  background-image: url(../img/IMG_5433.jpg);
+  background-size: cover;
+}
+
+.job-hero {
+  width: 100vw;
+  height: 60vh;
+  background-image: url(../img/IMG_5427.jpg);
+  background-size: cover;
+}
+
+.usage-hero {
+  width: 100vw;
+  height: 60vh;
+  background-image: url(../img/IMG_5451.jpg);
+  background-size: cover;
+}
+
+.about-hero {
+  width: 100vw;
+  height: 60vh;
+  background-image: url(../img/7-IMG_5437.jpg);
+  background-size: cover;
+}
+
+.access_contact-hero {
+  width: 100vw;
+  height: 60vh;
+  background-image: url(../img/IMG_5440.jpg);
+  background-size: cover;
+}
+
+.top-desc {
+  margin: 2rem 0;
+  font-size: 30px;
+  line-height: 2rem;
+  text-align: center;
+}
+
+.desc {
+  width: 11rem;
+  padding: 1rem 0;
+  margin: 0 auto;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1rem;
+  font-weight: bold;
+  letter-spacing: .2rem;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.contact-button {
+  padding-top: .5rem;
+}
+
+.contact-button h2 span {
+  padding: 0 10%;
+}
+
+.contact-button h2::before,
+.contact-button h2::after {
+  content: "";
+  width: 20%;
+  height: 1px;
+  vertical-align: center;
+  display: inline-block;
+  background-color: black;
+}
+
+.contact-button:hover h2::before,
+.contact-button:hover h2::after {
+  background: #fff;
+} 
+
+.desc-jp {
+  margin: -.5rem 0 .5rem;
+  font-size: .8rem;
+}
+
+@media (min-width:600px) {
+  /* 600px以上の時（HPサイズの時） */
+  .hero {
+    height: 70vh;
+  }
+
+  .contact-button h2 span {
+    padding: 0 10%;
+  }
+
+  .desc-space {
+    margin-top: 1rem;
+  }
+}
+
+
+/* index.html */
+
+main {
+  margin: 0 auto;
+  padding: 0 2.5rem;
+  display: block;
+  flex-wrap: nowrap;
+  gap: 1.5rem 0;
+}
+
+.main-block {
+  margin-bottom: 2rem;
+}
+
+.main-block img,
+.main-block-job img {
+  width: 100%;
+}
+
+.main-block p {
+  font-size: .8rem;
+  text-align: center;
+  padding: .5rem 0;
+}
+
+.showmore-button {
+  width: 100%;
+  height: 100px;
+  margin: 4rem auto;
+  padding-bottom: .7rem;
+  box-shadow: 0px 2px 10px #ddd;
+  border-radius: 50px 50px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.showmore-button > p {
+  font-size: .7rem;
+  padding: .7rem 0 .2rem 0;
+}
+
+.showmore-button > div {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 30%;
+}
+
+.main-buttom {
+  margin: 1rem 2.5rem;
+}
+
+.contact-button {
+  display: block;
+  width: 100%;
+  height: 20%;
+  margin: 3rem auto;
+  padding-bottom: .7rem;
+  box-shadow: 0px 2px 10px #ddd;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition : all 0.3s ease 0s;
+}
+
+.contact-button:hover {
+  background: blue;
+  color: #fff;
+}
+
+.contact-button h2 {
+  font-size: 1.5rem;
+  padding-top: 1rem;
+}
+
+.contact-button .desc-jp {
+  padding-bottom: 1rem;
+}
+
+@media (min-width:600px) {
+  /* 600px以上の時（HPサイズの時） */
+  main {
+    padding: 0;
+    width: 80vw;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem 5vw;
+  }
+  
+  .main-block {
+    margin-bottom: 0;
+  }
+    
+  .main-block img,
+  .main-block-job img {
+    width: 37.5vw;
+  }
+
+  .showmore-button {
+    width: 35vw;
+    height: 20%;
+    margin: 4rem 0;
+    padding-bottom: .7rem;
+  }
+
+  .main-buttom {
+    margin: 1rem 0;
+  }
+
+  .contact-button {
+    width: 55vw;
+    height: 20%;
+    margin: 3rem 22.5vw;
+    padding-bottom: .7rem;
+  }
+}
+
+
+
+.numbers-circle{
+
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  background: gray;
+  text-align:center;
+  line-height: 1.5rem;
+
+  color: #fff;
+
+}
+
+
+
+/* footer */
+
+footer {
+  background: blue;
+  width: 100vw;
+  height: 24rem;
+  position: relative;
+}
+
+.footer-logo {
+  padding: 3rem;
+  margin: 0 auto;
+  display: flex; 
+/*  text-align: center; */
+}
+
+footer a img{
+
+  width: 500px; /* 500pxは宮崎の指定による暫定値 */
+
+}
+
+.footer-info {
+  position: absolute;
+  color: #fff;
+  top: 8rem;
+  left: 2.5rem;
+}
+
+.footer-tel-number {
+  text-decoration: none;
+}
+
+footer nav {
+  margin: 11rem auto;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+footer nav ul {
+  display: flex;
+}
+
+footer nav ul li {
+  padding: .2rem;
+  font-size: .8rem;
+  color: #fff;
+  white-space: nowrap;
+}
+
+footer nav ul li a {
+  font-size: .8rem;
+  text-decoration: none;
+}
+
+.copyright {
+  padding: .5rem;
+  text-align: center;
+  color: #fff;
+  background: navy;
+}
+
+@media (min-width:600px) {
+  /* 600px以上の時（HPサイズの時） */
+  .footer-info {
+    top: 8rem;
+    left: 20vw;
+  }
+
+  footer nav ul li {
+    padding: 1rem;
+  }
+
+  .copyright {
+    padding: 1rem;
+  }
+}
+
+
+/* arrow-up */
+
+#arrowup {
+  position: fixed;
+  right: 2rem;
+  bottom: 5rem;
+  width: 70px;
+  height: 70px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0px 2px 10px #ddd;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  /* transition : all 0.3s ease 0s; */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s, visibility 0.5s;
+}
+
+#arrowup:hover {
+  color: #fff;
+  background: gray;
+}
+
+#arrowup.hide {
+  display: none;
+}
+
+#arrowup.is-visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.material-icons {
+  font-size: 3rem;
+  z-index: 2;
+}
+
+@media (min-width:600px) {
+  /* 600px以上の時（HPサイズの時） */
+  #arrowup {
+    right: 4rem;
+  }
+}
+
+
+/* about.html */
+
+.main-about {
+  position: relative;
+  width: 100%;
+  height: 80rem;
+}
+
+h3 {
+  position: static;
+  margin: 0 auto;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+}
+
+.about-row-1 {
+  position: static;
+  display: block;
+  margin: 2rem auto;
+  text-align: center;
+}
+
+.about-row-1 h2 {
+  display: flex;
+  justify-content: center;
+}
+
+.about-row-1 p,
+.about-row-2 p  {
+  margin-top: .8rem;
+  font-size: .8rem;
+  line-height: 1.4rem;
+}
+
+.about-row-2 h2 {
+  display: flex;
+  justify-content: center;
+}
+
+.about-block-1 {
+  margin: 0 auto;
+  width: 40vw;
+}
+
+.about-block-1 .about-desc {
+  display: flex;
+  justify-content: center;
+  margin: .8rem -5rem;
+}
+
+.about-block-2 {
+  margin: 0 auto;
+  width: 40vw;
+}
+.about-block-3 {
+  margin: 0 auto;
+  width: 70vw;
+}
+
+.desc-jp-about-wrapper {
+  position: static;
+}
+
+.about-row-2 {
+  position: static;
+  top: 64rem;
+  left: -30vw;
+  display: block;
+  margin: 2rem auto;
+  text-align: center;
+}
+
+.about-title {
+  width: 40vw;
+  margin: 0 auto;
+}
+
+.about-block-4 {
+  margin: 0 auto;
+  width: 40vw;
+}
+
+.about-block-4-desc {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+@media (min-width:600px) {
+  /* 600px以上の時（HPサイズの時） */
+
+  .main-about {
+    width: 80vw;
+    height: 55rem;
+  }
+
+  h3 {
+    position: absolute;
+    top: 1rem;
+    left: 0;
+    right: 0;
+    font-size: 2rem;
+    line-height: 3rem;
+    text-align: center;
+  }
+
+  .desc-jp-about-wrapper {
+    position: absolute;
+    top: 8.5rem;
+    left: 30vw;
+  }
+
+  .about-top{
+
+    position: relative;
+
+    left: -10vw;
+
+  }
+
+  .about-row-1 {
+    position: absolute;
+    left: -30vw;
+    width: 80vw;
+    display: flex;
+    justify-content: space-between;
+    margin: 2rem auto;
+  }
+
+  .about-block-1 {
+    width: 20vw;
+  }
+
+  .about-block-1 .about-desc {
+    display: flex;
+    justify-content: center;
+    margin: .8rem 0;
+  }
+  
+  .about-block-2 {
+    width: 16vw;
+  }
+  .about-block-3 {
+    width: 36vw;
+  }
+
+  .about-row-2 {
+    position: absolute;
+    top: 37rem;
+    left: 0;
+    width: 80vw;
+    margin: 2rem auto;
+  }
+
+  .about-title {
+    width: 16vw;
+  }
+
+  .about-block-4-desc {
+    position: absolute;
+    left: 5vw;
+    width: 70vw;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .about-block-4-desc p {
+    /* display: block; */
+  }
+}
+
+/* job.html */
+
+.main-block-job p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: .5rem 0;
+  padding: .5rem 0 .3rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border: 1px solid black;
+}
+
+.main-block-job p span {
+  padding-left: 1rem;
+  font-size: .6rem;
+}
+
+.main-block-job .shop-desc {
+  display: block;
+  text-align: center;
+  font-size: .8rem;
+  font-weight: normal;
+  border: none;
+}
+
+.bold {
+  font-size: .8rem;
+}
+
+
+/* usage.html */
+
+.usage-main {
+  display: block;
+  flex-wrap: nowrap;
+  padding: 0 2.5rem;
+  margin: 0 auto 2rem;
+}
+
+.usage-main-block {
+  width: 100%;
+  margin-bottom: -1rem;
+}
+
+.usage-title {
+  display: flex;
+  align-items: center;
+  margin-bottom: .4rem;
+  padding: .3rem;
+  font-size: 1.5rem;
+  border: solid 1px;
+}
+
+.usage-title span {
+  font-size: 1rem;
+}
+
+@media (min-width:600px) {
+  /* 600px以上の時（HPサイズの時） */
+
+  .usage-main {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5vw;
+    width: 90vw;
+    margin: 1rem auto 2rem;
+  }
+}
+/* access_contact.html */
+
+.name-sm {
+  font-size: .8rem;
+  text-align: center;
+}
+
+.name-lg {
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+.address {
+  width: 40vw;
+  margin: 0 auto;
+}
+
+.tel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tel-mark {
+  margin-right: .2rem;
+  padding: .2rem .9rem;
+  font-size: .8rem;
+  border: .5px solid;
+}
+
+.tel-number {
+  font-size: 2.5rem;
+  text-decoration: none;
+}
+
+.hour {
+  margin-bottom: 1.8rem;
+  font-size: .8rem;
+  text-align: center;
+}
+
+.desc-space-access {
+  margin-top: 2.5rem;
+}
+
+table {
+  margin: 0 auto 5rem;
+  padding: 0;
+  width: 600px;
+  border-spacing: 0;
+}
+
+th,td {
+  padding: 1.5rem;
+  gap: 0;
+  text-align: center;
+  border: 1px solid;
+  font-size: 1rem;
+  font-weight: normal;
+}
+
+.contact-tel,
+.contact-mail {
+  margin: 0 auto;
+  text-align: center;
+  width: 60vw;
+}
+
+.contact-tel h2,
+.contact-mail h2 {
+  white-space: nowrap;
+}
+
+.contact-tel h2 span,
+.contact-mail h2 span {
+  padding: 0 3%;
+  width: 15vw;
+}
+
+.contact-tel h2::before,
+.contact-tel h2::after,
+.contact-mail h2::before,
+.contact-mail h2::after {
+  content: "";
+  width: 20vw;
+  height: 1px;
+  vertical-align: center;
+  display: inline-block;
+  background-color: black;
+
+}
+
+.contact-mail p {
+  font-size: .8rem;
+}
